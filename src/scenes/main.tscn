@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://7dsb7v67kdi3"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_2i1gy"]
+[ext_resource type="PackedScene" path="res://src/scenes/pad.tscn" id="2_w56lt"]
+[ext_resource type="PackedScene" uid="uid://cgpj1x0cbpdov" path="res://src/scenes/ball.tscn" id="3_q7w5m"]
+[ext_resource type="PackedScene" uid="uid://b1dpgujn6hp3d" path="res://src/scenes/block.tscn" id="4_18jr2"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2i1gy")
+
+[node name="Pad" parent="." instance=ExtResource("2_w56lt")]
+position = Vector2(557, 512.5)
+scale = Vector2(1, 0.289062)
+
+[node name="Ball" parent="." instance=ExtResource("3_q7w5m")]
+position = Vector2(389, 291)
+linear_velocity = Vector2(0, 1000)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(81, -269.989)
+scale = Vector2(4.05378, 2.33837)
+polygon = PackedVector2Array(-19.488, 21.9165, -20, 652, -56, 649, -51.8035, 18.5447)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(778.668, 67.9984)
+rotation = 1.5708
+scale = Vector2(3.35341, 1.41157)
+polygon = PackedVector2Array(-20.576, 20.655, -20.5755, 248.374, -20, 652, -56, 649, -48.6065, 308.273, -49.2031, 218.941, -48.6069, 150.78, -50.9928, 17.0406)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(1100, 1239)
+rotation = 1.5708
+scale = Vector2(2.35206, 1.98391)
+polygon = PackedVector2Array(-24, 23, -23.3307, 128.249, -22.4586, 265.388, -20, 652, -62.4965, 647.207, -62.7454, 334.193, -63, 14)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(887, -122.95)
+scale = Vector2(2.55814, 1.85805)
+polygon = PackedVector2Array(-24, 23, -22.7623, 217.617, -20, 652, -61.0454, 652.776, -63, 14)
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Block" parent="Blocks" groups=["bricks"] instance=ExtResource("4_18jr2")]
+position = Vector2(532, 130)
+
+[node name="Block2" parent="Blocks" groups=["bricks"] instance=ExtResource("4_18jr2")]
+position = Vector2(243, 131)

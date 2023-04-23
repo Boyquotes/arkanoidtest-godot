@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwaiid08gpanf"]
+
+[ext_resource type="PackedScene" uid="uid://b1dpgujn6hp3d" path="res://src/scenes/block.tscn" id="1_ja61r"]
+
+[node name="Blocks" type="Node2D"]
+
+[node name="Block" parent="." instance=ExtResource("1_ja61r")]
+position = Vector2(138, 50)
+
+[node name="Block2" parent="." instance=ExtResource("1_ja61r")]
+position = Vector2(420, 50)
+
+[node name="Block4" parent="." instance=ExtResource("1_ja61r")]
+position = Vector2(1016, 50)
+
+[node name="Block3" parent="." instance=ExtResource("1_ja61r")]
+position = Vector2(720, 50)

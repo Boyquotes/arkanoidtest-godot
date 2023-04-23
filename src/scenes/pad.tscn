@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bmks3wgsgpwih" path="res://assets/icon.svg" id="1_chfhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm151"]
+size = Vector2(128, 128)
+
+[node name="Godot" type="Sprite2D"]
+position = Vector2(557, 558)
+texture = ExtResource("1_chfhy")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_sm151")
